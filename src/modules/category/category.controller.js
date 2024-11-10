@@ -22,6 +22,18 @@ class CategoryController {
         }
     }
 
+    async searchProducts(req,res){
+        const {categoryName , query} = req.params;
+        const result = await CategoryService.searchProducts(categoryName,query);
+        if(result){
+            res.status(200);
+            res.send(result)
+        }
+        else{
+            throw new Error();
+        }
+    }
+
     async getCategoryByName(req,res){    
         const {categoryName} = req.params;
         const result = await CategoryService.getCategoryByName(categoryName);

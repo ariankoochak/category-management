@@ -1,5 +1,6 @@
 const groupModel = require("../group/group.model");
 const categoryModel = require("./category.model");
+const productModel = require('../product/product.model')
 
 class CategoryService {
     async addCategory(categoryName,groupName) {
@@ -17,6 +18,24 @@ class CategoryService {
             return result;
         }
         throw new Error();
+    }
+
+    async searchProducts(categoryName,query){
+        try {
+            const result = await productModel.find({
+                CategoryName: categoryName,
+                Name: { $regex : query , $options : 'i'},
+            });
+            if (result) {
+                return result;
+            } else {
+                throw new Error();
+            }
+        } catch (error) {
+            console.log(error);
+            
+        }
+        
     }
 
     async getCategoryByName(categoryName){

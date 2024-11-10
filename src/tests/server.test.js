@@ -97,7 +97,6 @@ describe("Fastify API", () => {
         const checkResData = () => {
             
             for (const data of response.data) {
-                console.log(data);
                 if (data.Name && data.CategoryName === "salam") {
                     return true;
                 }
@@ -157,6 +156,24 @@ describe("Fastify API", () => {
         });
         expect(response.status).toBe(201);
         expect(response.data).toBe("product category updated successfully");
+    });
+
+    test("search product by category test", async () => {
+        const response = await axios({
+            method: "get",
+            url: "http://localhost:3000/category/bye/mini",
+        });
+        const checkResData = () => {
+            for (const data of response.data) {
+                if (data.Name && data.CategoryName === "bye") {
+                    return true;
+                }
+            }
+            return false;
+        };
+        expect(response.status).toBe(200);
+        expect(checkResData()).toBe(true);
+
     });
 
     test("remove product test", async () => {
