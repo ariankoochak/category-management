@@ -11,6 +11,17 @@ class GroupController {
             throw new Error()
         }
     }
+
+    async getGroups(req,res){
+        const result = await groupService.getGroups();
+        if(result){
+            res.status(200)
+            res.send(result)
+        }
+        else{
+            throw new Error();
+        }
+    }
     
     async editGroup(req, res) {
         const { groupNewName, groupOldName } = req.body;

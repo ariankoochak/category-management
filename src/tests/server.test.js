@@ -82,6 +82,37 @@ describe("Fastify API", () => {
         expect(response.data).toBe("category deleted successfully");
     });
 
+    test("add another group test", async () => {
+        const dataObj = JSON.parse('{"groupName": "test 2"}');
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "post",
+            url: "http://localhost:3000/group/add",
+        });
+        expect(response.status).toBe(201);
+        expect(response.data).toBe("group created successfully");
+    });
+
+    test("edit group test", async () => {
+        const response = await axios({
+            method: "get",
+            url: "http://localhost:3000/group",
+        });
+        const checkResData = ()=>{
+           for(const data of response.data){
+                if(data.Name && data.Name === 'test'){
+                    return true;
+                }
+           }
+           return false
+        }
+        expect(response.status).toBe(200);
+        expect(checkResData()).toBe(true);
+    });
+
     test("edit group test", async () => {
         const dataObj = JSON.parse(`{
             "groupOldName" : "test",
@@ -101,6 +132,20 @@ describe("Fastify API", () => {
 
     test("remove group test", async () => {
         const dataObj = JSON.parse(`{"groupName": "testNew"}`);
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "delete",
+            url: "http://localhost:3000/group/remove",
+        });
+        expect(response.status).toBe(200);
+        expect(response.data).toBe("group deleted successfully");
+    });
+
+    test("remove another group test", async () => {
+        const dataObj = JSON.parse(`{"groupName": "test 2"}`);
         const response = await axios({
             headers: {
                 "content-type": "application/json",

@@ -9,6 +9,14 @@ class GroupService {
         throw new Error();
     }
 
+    async getGroups(){
+        const result = await groupModel.find({}).select('Name');
+        if(result){
+            return result;
+        }
+        throw new Error;
+    }
+
     async editGroup(groupNewName, groupOldName) {
         const result = await groupModel.updateOne(
             { Name: groupOldName },
