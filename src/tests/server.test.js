@@ -54,6 +54,23 @@ describe("Fastify API", () => {
         expect(response.data).toBe("category created successfully");
     });
 
+    test("get categories test", async () => {
+        const response = await axios({
+            method: "get",
+            url: "http://localhost:3000/category",
+        });
+        const checkResData = () => {
+            for (const data of response.data) {
+                if (data.Name && data.Name === "salam") {
+                    return true;
+                }
+            }
+            return false;
+        };
+        expect(response.status).toBe(200);
+        expect(checkResData()).toBe(true);
+    });
+
     test("edit category test", async () => {
         const dataObj = JSON.parse(`{"categoryOldName" : "salam","categoryNewName" : "salamNew"}`);
         const response = await axios({
