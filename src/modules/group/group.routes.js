@@ -1,6 +1,6 @@
+const groupController = require("./group.controller");
+
 module.exports = function (fastify, opts, done) {
-    fastify.get("/", (req,res)=>{
-        res.send('salam')
-    });
+    fastify.get("/",groupController.addNewGroup);
     done();
 };
