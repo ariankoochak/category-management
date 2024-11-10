@@ -54,6 +54,23 @@ describe("Fastify API", () => {
         expect(response.data).toBe("category created successfully");
     });
 
+    test("add another category test", async () => {
+        const dataObj = JSON.parse(`{
+            "categoryName" : "bye",
+            "groupName" : "test"
+        }`);
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "post",
+            url: "http://localhost:3000/category/add",
+        });
+        expect(response.status).toBe(201);
+        expect(response.data).toBe("category created successfully");
+    });
+
     test("add product test", async () => {
         const dataObj = JSON.parse(`{
             "productName" : "productName",
@@ -104,6 +121,23 @@ describe("Fastify API", () => {
         });
         expect(response.status).toBe(201);
         expect(response.data).toBe("product price updated successfully");
+    });
+
+    test("edit product category test", async () => {
+        const dataObj = JSON.parse(`{
+            "productName" : "mac mini",
+            "productNewCategory" : "bye"
+        }`);
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "put",
+            url: "http://localhost:3000/product/change-category",
+        });
+        expect(response.status).toBe(201);
+        expect(response.data).toBe("product category updated successfully");
     });
 
     test("remove product test", async () => {
@@ -170,6 +204,20 @@ describe("Fastify API", () => {
 
     test("remove category test", async () => {
         const dataObj = JSON.parse(`{"categoryName": "salamNew"}`);
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "delete",
+            url: "http://localhost:3000/category/remove",
+        });
+        expect(response.status).toBe(200);
+        expect(response.data).toBe("category deleted successfully");
+    });
+
+    test("remove category test", async () => {
+        const dataObj = JSON.parse(`{"categoryName": "bye"}`);
         const response = await axios({
             headers: {
                 "content-type": "application/json",

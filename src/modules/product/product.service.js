@@ -42,6 +42,23 @@ class ProductService {
         return result;
     }
 
+    async editProductCategory(productName, productNewCategory) {
+        const category = await categoryModel.findOne({ Name: productNewCategory });
+            if (category) {
+            const result = await productModel.updateOne(
+                { Name: productName },
+                { $set: { CategoryName: productNewCategory } }
+            );
+            if (result.modifiedCount !== 1) {
+                throw { message: "product category not changed", statusCode: 400 };
+            }
+            return result;
+        }
+        else{
+            throw { statusCode: 400, message: "category not valid" };
+        }
+    }
+
     async removeProduct(productName) {
         const result = await productModel.deleteOne({ Name: productName });
         if (result.deletedCount !== 1) {
