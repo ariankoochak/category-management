@@ -89,6 +89,25 @@ describe("Fastify API", () => {
         expect(response.data).toBe("product created successfully");
     });
 
+    test("get product by category name test", async () => {
+        const response = await axios({
+            method: "get",
+            url: "http://localhost:3000/product/salam",
+        });
+        const checkResData = () => {
+            
+            for (const data of response.data) {
+                console.log(data);
+                if (data.Name && data.CategoryName === "salam") {
+                    return true;
+                }
+            }
+            return false;
+        };
+        expect(response.status).toBe(200);
+        expect(checkResData()).toBe(true);
+    });
+
     test("edit product name test", async () => {
         const dataObj = JSON.parse(`{
             "productNewName" : "mac mini",

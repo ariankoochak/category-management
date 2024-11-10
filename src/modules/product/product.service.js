@@ -19,6 +19,16 @@ class ProductService {
             throw { statusCode: 400, message: "category not valid" };
         }
     }
+    
+    async getProductsByCategory(categoryName){
+        const result = await productModel.find({CategoryName : categoryName});
+        if(result){
+            return result;
+        }
+        else{
+            throw new Error();
+        }
+    }
 
     async editProductName(productNewName, productOldName) {
         const result = await productModel.updateOne(

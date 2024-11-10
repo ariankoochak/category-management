@@ -16,6 +16,18 @@ class ProductController {
         }
     }
 
+    async getProductsByCategory(req,res){
+        const {categoryName} = req.params;
+        const result = await productService.getProductsByCategory(categoryName);
+        if(result){
+            res.status(200);
+            res.send(result);
+        }
+        else{
+            throw new Error();
+        }
+    }
+
     async editProductName(req, res) {
         const { productNewName, productOldName } = req.body;
         const result = await productService.editProductName(
