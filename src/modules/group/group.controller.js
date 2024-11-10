@@ -23,6 +23,17 @@ class GroupController {
             throw new Error()
         }
     }
+
+    async removeGroup(req,res){
+        const { groupName } = req.body;
+        const result = await groupService.removeGroup(groupName);
+        if (result) {
+            res.status(200);
+            res.send("group deleted successfully");
+        } else {
+            throw new Error();
+        }
+    }
 }
 
 module.exports = new GroupController();
