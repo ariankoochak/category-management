@@ -21,6 +21,18 @@ class CategoryController {
             throw new Error();
         }
     }
+
+    async getCategoryByName(req,res){    
+        const {categoryName} = req.params;
+        const result = await CategoryService.getCategoryByName(categoryName);
+        if(result){
+            res.status(200);
+            res.send(result);
+        }
+        else{
+            throw new Error();
+        }
+    }
     
     async editCategoryName(req, res) {
         const { categoryNewName, categoryOldName } = req.body;

@@ -19,6 +19,16 @@ class CategoryService {
         throw new Error();
     }
 
+    async getCategoryByName(categoryName){
+        const result = await categoryModel.findOne({Name : categoryName});
+        console.log(result);
+        
+        if(result){
+            return result
+        }
+        throw new Error();
+    }
+
     async editCategoryName(categoryNewName, categoryOldName) {
         const result = await categoryModel.updateOne(
             { Name: categoryOldName },
