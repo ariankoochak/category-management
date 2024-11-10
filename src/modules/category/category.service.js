@@ -11,7 +11,7 @@ class CategoryService {
         throw new Error();
     }
 
-    async editCategory(categoryNewName, categoryOldName) {
+    async editCategoryName(categoryNewName, categoryOldName) {
         const result = await categoryModel.updateOne(
             { Name: categoryOldName },
             { $set: { Name: categoryNewName } }

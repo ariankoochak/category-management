@@ -12,9 +12,9 @@ class CategoryController {
         }
     }
     
-    async editCategory(req, res) {
+    async editCategoryName(req, res) {
         const { categoryNewName, categoryOldName } = req.body;
-        const result = await CategoryService.editCategory(categoryNewName,categoryOldName);
+        const result = await CategoryService.editCategoryName(categoryNewName,categoryOldName);
         if (result) {
             res.status(201);
             res.send("category edited successfully");
