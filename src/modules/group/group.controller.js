@@ -4,7 +4,7 @@ class GroupController {
     async addGroup(req, res) {
         const { groupName } = req.body;
         const result = await groupService.addGroup(groupName);
-        if (result !== "err") {
+        if (result) {
             res.status(201);
             res.send("group created successfully");
         } else {
