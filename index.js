@@ -2,9 +2,13 @@ const fastify = require("fastify")();
 
 const PORT = 3000;
 
+const errorHandler = require('./src/utils/errorHandler')
+
 require('./src/config/mongoose/mongoose.config');
 
 fastify.register(require("./src/modules/router/routes"));
+
+fastify.setErrorHandler(errorHandler)
 
 const startServer = async () => {
     try {
