@@ -54,6 +54,24 @@ describe("Fastify API", () => {
         expect(response.data).toBe("category created successfully");
     });
 
+    test("add product test", async () => {
+        const dataObj = JSON.parse(`{
+            "productName" : "productName",
+            "productPrice" : "320",
+            "productCategory" : "salam"
+        }`);
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "post",
+            url: "http://localhost:3000/product/add",
+        });
+        expect(response.status).toBe(201);
+        expect(response.data).toBe("product created successfully");
+    });
+
     test("get categories test", async () => {
         const response = await axios({
             method: "get",
@@ -89,7 +107,9 @@ describe("Fastify API", () => {
     });
 
     test("edit category test", async () => {
-        const dataObj = JSON.parse(`{"categoryOldName" : "salam","categoryNewName" : "salamNew"}`);
+        const dataObj = JSON.parse(
+            `{"categoryOldName" : "salam","categoryNewName" : "salamNew"}`
+        );
         const response = await axios({
             headers: {
                 "content-type": "application/json",
@@ -135,14 +155,14 @@ describe("Fastify API", () => {
             method: "get",
             url: "http://localhost:3000/group",
         });
-        const checkResData = ()=>{
-           for(const data of response.data){
-                if(data.Name && data.Name === 'test'){
+        const checkResData = () => {
+            for (const data of response.data) {
+                if (data.Name && data.Name === "test") {
                     return true;
                 }
-           }
-           return false
-        }
+            }
+            return false;
+        };
         expect(response.status).toBe(200);
         expect(checkResData()).toBe(true);
     });
