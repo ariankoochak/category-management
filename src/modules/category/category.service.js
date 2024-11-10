@@ -4,7 +4,7 @@ const categoryModel = require("./category.model");
 class CategoryService {
     async addCategory(categoryName,groupName) {
         const group = await groupModel.findOne({Name : groupName});
-        const result = await categoryModel.create({ Name: categoryName , GroupId: group._id});
+        const result = await categoryModel.create({ Name: categoryName , GroupName: group.Name});
         if (result.Name) {
             return result;
         }

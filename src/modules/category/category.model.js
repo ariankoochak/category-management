@@ -3,7 +3,7 @@ const {Schema, model} = require('mongoose')
 const categorySchema = new Schema(
     {
         Name: { type: String, required: true, trim: true ,minLength : 2,unique : true},
-        GroupId: { type: String, required: true, trim: true ,minLength : 2},
+        GroupName: { type: String, required: true, trim: true ,minLength : 2},
     },
     { timestamps: true }
 );
