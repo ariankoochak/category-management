@@ -1,6 +1,6 @@
 const groupModel = require("./group.model");
 
-class GroupModel {
+class GroupService {
     async addGroup(groupName) {
         const result = await groupModel.create({ Name: groupName });
         if (result.Name) {
@@ -29,4 +29,4 @@ class GroupModel {
     }
 }
 
-module.exports = new GroupModel();
+module.exports = new GroupService();
