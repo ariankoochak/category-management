@@ -9,6 +9,7 @@ class ProductService {
                 Name: productName,
                 Price: productPrice,
                 CategoryName: CategoryName,
+                GroupName : category.GroupName,
             });
             if (result.Name) {
                 return result;
@@ -57,7 +58,7 @@ class ProductService {
             if (category) {
             const result = await productModel.updateOne(
                 { Name: productName },
-                { $set: { CategoryName: productNewCategory } }
+                { $set: { CategoryName: productNewCategory ,GroupName : category.GroupName} }
             );
             if (result.modifiedCount !== 1) {
                 throw { message: "product category not changed", statusCode: 400 };
