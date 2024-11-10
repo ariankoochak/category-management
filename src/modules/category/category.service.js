@@ -21,8 +21,6 @@ class CategoryService {
 
     async getCategoryByName(categoryName){
         const result = await categoryModel.findOne({Name : categoryName});
-        console.log(result);
-        
         if(result){
             return result
         }
