@@ -96,7 +96,7 @@ describe("Fastify API", () => {
         expect(response.data).toBe("group created successfully");
     });
 
-    test("edit group test", async () => {
+    test("get groups test", async () => {
         const response = await axios({
             method: "get",
             url: "http://localhost:3000/group",
