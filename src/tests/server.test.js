@@ -1,5 +1,6 @@
 const axios = require("axios");
 const fastify = require("fastify")();
+const mongoose = require("mongoose");
 
 beforeAll(async () => {
     const errorHandler = require("../utils/errorHandler");
@@ -15,6 +16,10 @@ beforeAll(async () => {
 
 afterAll(async () => {
     await fastify.close();
+
+    if (mongoose.connection.readyState) {
+        await mongoose.disconnect();
+    }
 });
 
 describe("Fastify API", () => {
