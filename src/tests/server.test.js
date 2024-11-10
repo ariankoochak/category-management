@@ -32,6 +32,51 @@ describe("Fastify API", () => {
         expect(response.data).toBe("group created successfully");
     });
 
+    test("add category test", async () => {
+        const dataObj = JSON.parse(`{
+            "categoryName" : "salam",
+            "groupName" : "test"
+        }`);
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "post",
+            url: "http://localhost:3000/category/add",
+        });
+        expect(response.status).toBe(201);
+        expect(response.data).toBe("category created successfully");
+    });
+
+    test("edit category test", async () => {
+        const dataObj = JSON.parse(`{"categoryOldName" : "salam","categoryNewName" : "salamNew"}`);
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "put",
+            url: "http://localhost:3000/category/change-name",
+        });
+        expect(response.status).toBe(201);
+        expect(response.data).toBe("category edited successfully");
+    });
+
+    test("remove category test", async () => {
+        const dataObj = JSON.parse(`{"categoryName": "salamNew"}`);
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "delete",
+            url: "http://localhost:3000/category/remove",
+        });
+        expect(response.status).toBe(200);
+        expect(response.data).toBe("category deleted successfully");
+    });
+
     test("edit group test", async () => {
         const dataObj = JSON.parse(`{
             "groupOldName" : "test",
