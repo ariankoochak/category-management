@@ -19,6 +19,15 @@ class ProductService {
             throw { statusCode: 400, message: "category not valid" };
         }
     }
+
+    async editProductName(productNewName,productOldName){
+        const result = await productModel.updateOne({Name : productOldName},{$set : {Name : productNewName}});
+        if (result.modifiedCount !== 1) {
+            throw { message: "group name not changed", statusCode: 400 };
+        }
+        return result;
+    }
+
     async removeProduct(productName) {
         const result = await productModel.deleteOne({ Name: productName });
         if (result.deletedCount !== 1) {

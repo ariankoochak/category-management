@@ -72,8 +72,25 @@ describe("Fastify API", () => {
         expect(response.data).toBe("product created successfully");
     });
 
+    test("edit product name test", async () => {
+        const dataObj = JSON.parse(`{
+            "productNewName" : "mac mini",
+            "productOldName" : "productName"
+        }`);
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "put",
+            url: "http://localhost:3000/product/change-name",
+        });
+        expect(response.status).toBe(201);
+        expect(response.data).toBe("product name updated successfully");
+    });
+
     test("remove product test", async () => {
-        const dataObj = JSON.parse(`{"productName" : "productName"}`);
+        const dataObj = JSON.parse(`{"productName" : "mac mini"}`);
         const response = await axios({
             headers: {
                 "content-type": "application/json",
@@ -108,8 +125,6 @@ describe("Fastify API", () => {
             method: "get",
             url: "http://localhost:3000/category/salam",
         });
-        console.log(response.data);
-
         const checkResData = () => {
             if (response.data.Name === "salam") {
                 return true;
