@@ -12,6 +12,17 @@ class ProductController{
             throw new Error();
         }
     }
+
+    async removeProduct(req,res){
+        const {productName} = req.body;
+        const result = await productService.removeProduct(productName);
+        if (result) {
+            res.status(200);
+            res.send("product removed successfully");
+        } else {
+            throw new Error();
+        }
+    }
 }
 
 module.exports = new ProductController();

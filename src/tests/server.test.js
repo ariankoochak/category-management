@@ -72,6 +72,20 @@ describe("Fastify API", () => {
         expect(response.data).toBe("product created successfully");
     });
 
+    test("remove product test", async () => {
+        const dataObj = JSON.parse(`{"productName" : "productName"}`);
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "delete",
+            url: "http://localhost:3000/product/remove",
+        });
+        expect(response.status).toBe(200);
+        expect(response.data).toBe("product removed successfully");
+    });
+
     test("get categories test", async () => {
         const response = await axios({
             method: "get",
