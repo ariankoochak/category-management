@@ -1,4 +1,6 @@
-const fastify = require("fastify")({ logger: true });
+const fastify = require("fastify")();
+
+require('./src/config/mongoose/mongoose.config')
 
 fastify.get("/", async (request, reply) => {
     return 'test';
