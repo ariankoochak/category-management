@@ -15,7 +15,6 @@ class GroupController {
     async editGroup(req, res) {
         const { groupNewName, groupOldName } = req.body;
         const result = await groupService.editGroup(groupNewName,groupOldName);
-        console.log(result);
         if (result) {
             res.status(201);
             res.send("group edited successfully");
