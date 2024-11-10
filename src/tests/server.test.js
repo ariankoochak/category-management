@@ -89,6 +89,23 @@ describe("Fastify API", () => {
         expect(response.data).toBe("product name updated successfully");
     });
 
+    test("edit product price test", async () => {
+        const dataObj = JSON.parse(`{
+            "productName" : "mac mini",
+            "productNewPrice" : "100"
+        }`);
+        const response = await axios({
+            headers: {
+                "content-type": "application/json",
+            },
+            data: dataObj,
+            method: "put",
+            url: "http://localhost:3000/product/change-price",
+        });
+        expect(response.status).toBe(201);
+        expect(response.data).toBe("product price updated successfully");
+    });
+
     test("remove product test", async () => {
         const dataObj = JSON.parse(`{"productName" : "mac mini"}`);
         const response = await axios({

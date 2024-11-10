@@ -20,10 +20,24 @@ class ProductService {
         }
     }
 
-    async editProductName(productNewName,productOldName){
-        const result = await productModel.updateOne({Name : productOldName},{$set : {Name : productNewName}});
+    async editProductName(productNewName, productOldName) {
+        const result = await productModel.updateOne(
+            { Name: productOldName },
+            { $set: { Name: productNewName } }
+        );
         if (result.modifiedCount !== 1) {
-            throw { message: "group name not changed", statusCode: 400 };
+            throw { message: "product name not changed", statusCode: 400 };
+        }
+        return result;
+    }
+
+    async editProductPrice(productName, productNewPrice) {
+        const result = await productModel.updateOne(
+            { Name: productName },
+            { $set: { Price: productNewPrice } }
+        );
+        if (result.modifiedCount !== 1) {
+            throw { message: "product price not changed", statusCode: 400 };
         }
         return result;
     }

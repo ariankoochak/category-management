@@ -24,6 +24,17 @@ class ProductController{
         }
     }
 
+    async editProductPrice(req,res){
+        const {productName , productNewPrice} = req.body;
+        const result = await productService.editProductPrice(productName,productNewPrice);
+        if (result) {
+            res.status(201);
+            res.send("product price updated successfully");
+        } else {
+            throw new Error();
+        }
+    }
+
     async removeProduct(req,res){
         const {productName} = req.body;
         const result = await productService.removeProduct(productName);
