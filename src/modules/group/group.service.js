@@ -1,4 +1,5 @@
 const groupModel = require("./group.model");
+const productModel = require('../product/product.model')
 
 class GroupService {
     async addGroup(groupName) {
@@ -9,12 +10,28 @@ class GroupService {
         throw new Error();
     }
 
-    async getGroups(){
-        const result = await groupModel.find({}).select('Name');
-        if(result){
+    async searchProducts(groupName, query) {
+        try {
+            const result = await productModel.find({
+                GroupName: groupName,
+                Name: { $regex: query, $options: "i" },
+            });
+            if (result) {
+                return result;
+            } else {
+                throw new Error();
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async getGroups() {
+        const result = await groupModel.find({}).select("Name");
+        if (result) {
             return result;
         }
-        throw new Error;
+        throw new Error();
     }
 
     async editGroup(groupNewName, groupOldName) {

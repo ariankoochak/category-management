@@ -176,6 +176,23 @@ describe("Fastify API", () => {
 
     });
 
+    test("search product by group test", async () => {
+        const response = await axios({
+            method: "get",
+            url: "http://localhost:3000/group/test/mini",
+        });
+        const checkResData = () => {
+            for (const data of response.data) {
+                if (data.Name && data.CategoryName === "bye") {
+                    return true;
+                }
+            }
+            return false;
+        };
+        expect(response.status).toBe(200);
+        expect(checkResData()).toBe(true);
+    });
+
     test("remove product test", async () => {
         const dataObj = JSON.parse(`{"productName" : "mac mini"}`);
         const response = await axios({

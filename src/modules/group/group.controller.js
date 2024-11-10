@@ -22,6 +22,18 @@ class GroupController {
             throw new Error();
         }
     }
+
+    async searchProducts(req,res){
+        const {groupName , query} = req.params;
+        const result = await groupService.searchProducts(groupName, query);
+        if(result){
+            res.status(200);
+            res.send(result)
+        }
+        else{
+            throw new Error();
+        }
+    }
     
     async editGroup(req, res) {
         const { groupNewName, groupOldName } = req.body;
