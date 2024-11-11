@@ -21,7 +21,7 @@
                             "properties": {
                                 "groupName": {
                                     "type": "string",
-                                    "default": "laptop",
+                                    "default": "test",
                                     "description": "Group name"
                                 }
                             },
@@ -52,7 +52,7 @@
                             "properties": {
                                 "categoryName": {
                                     "type": "string",
-                                    "default": "mac book",
+                                    "default": "razer",
                                     "description": "Category name"
                                 },
                                 "groupName": {
@@ -83,14 +83,14 @@
                         "type": "string",
                         "required": true,
                         "in": "path",
-                        "default": "test",
+                        "default": "laptop",
                         "name": "groupName"
                     },
                     {
                         "type": "string",
                         "required": true,
                         "in": "path",
-                        "default": "mini",
+                        "default": "mac",
                         "name": "query"
                     }
                 ],
@@ -107,7 +107,30 @@
                     "200": {
                         "description": "Default Response"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "groupNewName": {
+                                    "type": "string",
+                                    "default": "all in one",
+                                    "description": "Group name"
+                                },
+                                "groupOldName": {
+                                    "type": "string",
+                                    "default": "badNameGroup",
+                                    "description": "Group name"
+                                }
+                            },
+                            "required": ["groupNewName","groupOldName"]
+                        }
+                    }
+                ]
             }
         },
         "/group/remove": {
@@ -116,7 +139,25 @@
                     "200": {
                         "description": "Default Response"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "groupName": {
+                                    "type": "string",
+                                    "default": "sampleGroup",
+                                    "description": "Group name"
+                                }
+                            },
+                            "required": ["groupName"]
+                        }
+                    }
+                ]
             }
         },
         "/category/": {
@@ -135,12 +176,14 @@
                         "type": "string",
                         "required": true,
                         "in": "path",
+                        "default": "apple",
                         "name": "categoryName"
                     },
                     {
                         "type": "string",
                         "required": true,
                         "in": "path",
+                        "default": "mac",
                         "name": "query"
                     }
                 ],
@@ -158,6 +201,7 @@
                         "type": "string",
                         "required": true,
                         "in": "path",
+                        "default" : "asus",
                         "name": "categoryName"
                     }
                 ],
@@ -174,7 +218,30 @@
                     "200": {
                         "description": "Default Response"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "categoryNewName": {
+                                    "type": "string",
+                                    "default": "ps2",
+                                    "description": "category name"
+                                },
+                                "categoryOldName": {
+                                    "type": "string",
+                                    "default": "badNameCategory",
+                                    "description": "category name"
+                                }
+                            },
+                            "required": ["categoryNewName", "categoryOldName"]
+                        }
+                    }
+                ]
             }
         },
         "/category/remove": {
@@ -183,7 +250,25 @@
                     "200": {
                         "description": "Default Response"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "categoryName": {
+                                    "type": "string",
+                                    "default": "sampleCategory",
+                                    "description": "category name"
+                                }
+                            },
+                            "required": ["categoryName"]
+                        }
+                    }
+                ]
             }
         },
         "/product/add": {
@@ -192,7 +277,35 @@
                     "200": {
                         "description": "Default Response"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "productName": {
+                                    "type": "string",
+                                    "default": "test product",
+                                    "description": "product name"
+                                },
+                                "productPrice": {
+                                    "type": "string",
+                                    "default": "1000",
+                                    "description": "product price"
+                                },
+                                "productCategory": {
+                                    "type": "string",
+                                    "default": "asus",
+                                    "description": "category name"
+                                }
+                            },
+                            "required": ["productName","productPrice","productCategory"]
+                        }
+                    }
+                ]
             }
         },
         "/product/{categoryName}": {
@@ -202,6 +315,7 @@
                         "type": "string",
                         "required": true,
                         "in": "path",
+                        "default" : "CPU",
                         "name": "categoryName"
                     }
                 ],
@@ -218,7 +332,30 @@
                     "200": {
                         "description": "Default Response"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "productNewName": {
+                                    "type": "string",
+                                    "default": "good product name",
+                                    "description": "new product name"
+                                },
+                                "productOldName": {
+                                    "type": "string",
+                                    "default": "badProductName",
+                                    "description": "old product name"
+                                }
+                            },
+                            "required": ["productNewName","productOldName"]
+                        }
+                    }
+                ]
             }
         },
         "/product/change-price": {
@@ -227,7 +364,30 @@
                     "200": {
                         "description": "Default Response"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "productName": {
+                                    "type": "string",
+                                    "default": "badPriceProduct",
+                                    "description": "product name"
+                                },
+                                "productNewPrice": {
+                                    "type": "string",
+                                    "default": "1300",
+                                    "description": "new price"
+                                }
+                            },
+                            "required": ["productName", "productNewPrice"]
+                        }
+                    }
+                ]
             }
         },
         "/product/change-category": {
@@ -236,7 +396,30 @@
                     "200": {
                         "description": "Default Response"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "productName": {
+                                    "type": "string",
+                                    "default": "badCategoryProduct",
+                                    "description": "product name"
+                                },
+                                "productNewCategory": {
+                                    "type": "string",
+                                    "default": "asus",
+                                    "description": "new category"
+                                }
+                            },
+                            "required": ["productName", "productNewCategory"]
+                        }
+                    }
+                ]
             }
         },
         "/product/remove": {
@@ -245,7 +428,25 @@
                     "200": {
                         "description": "Default Response"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "productName": {
+                                    "type": "string",
+                                    "default": "sampleProductForRemove",
+                                    "description": "product name"
+                                }
+                            },
+                            "required": ["productName"]
+                        }
+                    }
+                ]
             }
         }
     },

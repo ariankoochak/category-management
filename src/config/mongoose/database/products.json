@@ -166,5 +166,29 @@
         "GroupName": "console",
         "CategoryName": "ps4",
         "Price": 220
+    },
+    {
+        "Name": "badProductName",
+        "GroupName": "laptop",
+        "CategoryName": "lenovo",
+        "Price": 1500
+    },
+    {
+        "Name": "sampleProductForRemove",
+        "GroupName": "laptop",
+        "CategoryName": "lenovo",
+        "Price": 1500
+    },
+    {
+        "Name": "badPriceProduct",
+        "GroupName": "laptop",
+        "CategoryName": "lenovo",
+        "Price": 10
+    },
+    {
+        "Name": "badCategoryProduct",
+        "GroupName": "laptop",
+        "CategoryName": "lenovo",
+        "Price": 1400
     }
 ]

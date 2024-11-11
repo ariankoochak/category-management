@@ -54,5 +54,13 @@
     {
         "Name": "ps4",
         "GroupName": "console"
+    },
+    {
+        "Name": "badNameCategory",
+        "GroupName": "console"
+    },
+    {
+        "Name": "sampleCategory",
+        "GroupName": "console"
     }
 ]
