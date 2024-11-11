@@ -1,0 +1,256 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "API Documentation",
+        "description": "API documentation for my Fastify project",
+        "version": "1.0.0"
+    },
+    "definitions": {},
+    "paths": {
+        "/group/add": {
+            "post": {
+                "summary": "Add a group",
+                "description": "Adds a new group with the specified name.",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "groupName": {
+                                    "type": "string",
+                                    "default": "laptop",
+                                    "description": "Group name"
+                                }
+                            },
+                            "required": ["groupName"]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Group added successfully" }
+                }
+            }
+        },
+        "/category/add": {
+            "post": {
+                "summary": "Add a category",
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "categoryName": {
+                                    "type": "string",
+                                    "default": "mac book",
+                                    "description": "Category name"
+                                },
+                                "groupName": {
+                                    "type": "string",
+                                    "default": "laptop",
+                                    "description": "group name"
+                                }
+                            },
+                            "required": ["categoryName"]
+                        }
+                    }
+                ]
+            }
+        },
+        "/group/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/group/{groupName}/{query}": {
+            "get": {
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "default": "test",
+                        "name": "groupName"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "default": "mini",
+                        "name": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/group/change-name": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/group/remove": {
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/category/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/category/{categoryName}/{query}": {
+            "get": {
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "categoryName"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/category/{categoryName}": {
+            "get": {
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "categoryName"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/category/change-name": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/category/remove": {
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/product/add": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/product/{categoryName}": {
+            "get": {
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "categoryName"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/product/change-name": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/product/change-price": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/product/change-category": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        },
+        "/product/remove": {
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        }
+    },
+    "host": "localhost:3000",
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"]
+}
