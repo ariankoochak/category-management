@@ -19,6 +19,7 @@ fastify.register(swagger, {
 fastify.register(swaggerUI, {
     routePrefix: "/documentation",
     uiConfig: {
+        title: "category management",
         docExpansion: "none",
         deepLinking: false,
     },

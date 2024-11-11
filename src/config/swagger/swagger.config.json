@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "title": "API Documentation",
-        "description": "API documentation for my Fastify project",
+        "description": "API documentation for final project",
         "version": "1.0.0"
     },
     "definitions": {},
