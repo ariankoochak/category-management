@@ -1,0 +1,58 @@
+[
+    {
+        "Name": "apple",
+        "GroupName": "laptop"
+    },
+    {
+        "Name": "asus",
+        "GroupName": "laptop"
+    },
+    {
+        "Name": "msi",
+        "GroupName": "laptop"
+    },
+    {
+        "Name": "lenovo",
+        "GroupName": "laptop"
+    },
+    {
+        "Name": "CPU",
+        "GroupName": "pc parts"
+    },
+    {
+        "Name": "GPU",
+        "GroupName": "pc parts"
+    },
+    {
+        "Name": "Motherboard",
+        "GroupName": "pc parts"
+    },
+    {
+        "Name": "RAM",
+        "GroupName": "pc parts"
+    },
+    {
+        "Name": "ios",
+        "GroupName": "mobile"
+    },
+    {
+        "Name": "android",
+        "GroupName": "mobile"
+    },
+    {
+        "Name": "java",
+        "GroupName": "mobile"
+    },
+    {
+        "Name": "ps5",
+        "GroupName": "console"
+    },
+    {
+        "Name": "xbox",
+        "GroupName": "console"
+    },
+    {
+        "Name": "ps4",
+        "GroupName": "console"
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "Name": "macbook pro",
+        "GroupName": "laptop",
+        "CategoryName": "apple",
+        "Price": 2400
+    },
+    {
+        "Name": "rog zephyrus",
+        "GroupName": "laptop",
+        "CategoryName": "asus",
+        "Price": 1800
+    },
+    {
+        "Name": "geforce rtx",
+        "GroupName": "laptop",
+        "CategoryName": "msi",
+        "Price": 2200
+    },
+    {
+        "Name": "yoga slim",
+        "GroupName": "laptop",
+        "CategoryName": "lenovo",
+        "Price": 1500
+    },
+    {
+        "Name": "intel i9",
+        "GroupName": "pc parts",
+        "CategoryName": "CPU",
+        "Price": 800
+    },
+    {
+        "Name": "nvidia titan",
+        "GroupName": "pc parts",
+        "CategoryName": "GPU",
+        "Price": 1200
+    },
+    {
+        "Name": "gigabyte aorus",
+        "GroupName": "pc parts",
+        "CategoryName": "Motherboard",
+        "Price": 300
+    },
+    {
+        "Name": "corsair vengeance",
+        "GroupName": "pc parts",
+        "CategoryName": "RAM",
+        "Price": 150
+    },
+    {
+        "Name": "iphone 15",
+        "GroupName": "mobile",
+        "CategoryName": "ios",
+        "Price": 1100
+    },
+    {
+        "Name": "galaxy s22",
+        "GroupName": "mobile",
+        "CategoryName": "android",
+        "Price": 1000
+    },
+    {
+        "Name": "pixel 7",
+        "GroupName": "mobile",
+        "CategoryName": "java",
+        "Price": 950
+    },
+    {
+        "Name": "playstation 5",
+        "GroupName": "console",
+        "CategoryName": "ps5",
+        "Price": 500
+    },
+    {
+        "Name": "series x",
+        "GroupName": "console",
+        "CategoryName": "xbox",
+        "Price": 480
+    },
+    {
+        "Name": "nintendo switch pro",
+        "GroupName": "console",
+        "CategoryName": "ps4",
+        "Price": 350
+    },
+    {
+        "Name": "macbook air",
+        "GroupName": "laptop",
+        "CategoryName": "apple",
+        "Price": 1300
+    },
+    {
+        "Name": "tuf gaming",
+        "GroupName": "laptop",
+        "CategoryName": "asus",
+        "Price": 1500
+    },
+    {
+        "Name": "stealth 15m",
+        "GroupName": "laptop",
+        "CategoryName": "msi",
+        "Price": 1700
+    },
+    {
+        "Name": "thinkpad x1",
+        "GroupName": "laptop",
+        "CategoryName": "lenovo",
+        "Price": 1900
+    },
+    {
+        "Name": "amd ryzen 9",
+        "GroupName": "pc parts",
+        "CategoryName": "CPU",
+        "Price": 900
+    },
+    {
+        "Name": "rtx 3080",
+        "GroupName": "pc parts",
+        "CategoryName": "GPU",
+        "Price": 1300
+    },
+    {
+        "Name": "msi z590",
+        "GroupName": "pc parts",
+        "CategoryName": "Motherboard",
+        "Price": 400
+    },
+    {
+        "Name": "hyperx predator",
+        "GroupName": "pc parts",
+        "CategoryName": "RAM",
+        "Price": 180
+    },
+    {
+        "Name": "iphone 13",
+        "GroupName": "mobile",
+        "CategoryName": "ios",
+        "Price": 950
+    },
+    {
+        "Name": "samsung galaxy s21",
+        "GroupName": "mobile",
+        "CategoryName": "android",
+        "Price": 950
+    },
+    {
+        "Name": "oneplus 9",
+        "GroupName": "mobile",
+        "CategoryName": "java",
+        "Price": 900
+    },
+    {
+        "Name": "xbox series s",
+        "GroupName": "console",
+        "CategoryName": "xbox",
+        "Price": 250
+    },
+    {
+        "Name": "playstation 4 pro",
+        "GroupName": "console",
+        "CategoryName": "ps4",
+        "Price": 350
+    },
+    {
+        "Name": "nintendo switch lite",
+        "GroupName": "console",
+        "CategoryName": "ps4",
+        "Price": 220
+    }
+]
