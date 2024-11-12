@@ -13,7 +13,7 @@ class CategoryService {
     }
 
     async getCategories(){
-        const result = await categoryModel.find({});
+        const result = await categoryModel.find({}).select('Name GroupName');
         if(result){
             return result;
         }
