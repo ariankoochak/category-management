@@ -85,6 +85,7 @@
                         "required": true,
                         "in": "path",
                         "name": "groupName",
+                        "default" : "laptop",
                         "description": "The name of the group"
                     },
                     {
@@ -92,6 +93,7 @@
                         "required": true,
                         "in": "path",
                         "name": "query",
+                        "default" : "mac",
                         "description": "A query parameter to filter or search within the group"
                     }
                 ],
