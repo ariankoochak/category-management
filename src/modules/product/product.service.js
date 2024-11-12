@@ -22,7 +22,7 @@ class ProductService {
     }
     
     async getProductsByCategory(categoryName){
-        const result = await productModel.find({CategoryName : categoryName});
+        const result = await productModel.find({CategoryName : categoryName}).select("-__v -createdAt -updatedAt");
         if(result){
             return result;
         }
