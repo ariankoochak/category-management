@@ -22,10 +22,11 @@ class CategoryService {
 
     async searchProducts(categoryName,query){
         try {
-            const result = await productModel.find({
-                CategoryName: categoryName,
-                Name: { $regex : query , $options : 'i'},
-            });
+            const result = await productModel
+                .find({
+                    CategoryName: categoryName,
+                    Name: { $regex: query, $options: "i" },
+                }).select("-__v -createdAt -updatedAt");
             if (result) {
                 return result;
             } else {
@@ -39,7 +40,7 @@ class CategoryService {
     }
 
     async getCategoryByName(categoryName){
-        const result = await categoryModel.findOne({Name : categoryName});
+        const result = await categoryModel.findOne({Name : categoryName}).select('Name GroupName');
         if(result){
             return result
         }
