@@ -180,6 +180,7 @@
                         "required": true,
                         "in": "path",
                         "name": "categoryName",
+                        "default" : "apple",
                         "description": "The name of the category"
                     },
                     {
@@ -187,6 +188,7 @@
                         "required": true,
                         "in": "path",
                         "name": "query",
+                        "default" : "mac",
                         "description": "A query parameter to filter or search within the category"
                     }
                 ],
@@ -205,6 +207,7 @@
                         "required": true,
                         "in": "path",
                         "name": "categoryName",
+                        "default" : "apple",
                         "description": "The name of the category"
                     }
                 ],
