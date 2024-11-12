@@ -15,7 +15,7 @@ class GroupService {
             const result = await productModel.find({
                 GroupName: groupName,
                 Name: { $regex: query, $options: "i" },
-            });
+            }).select('-__v -createdAt -updatedAt');
             if (result) {
                 return result;
             } else {
